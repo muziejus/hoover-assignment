@@ -87,10 +87,12 @@ The assignment:
 
   ```
   >>> set([token for token in ws['suny'] if "about" in token])
-  {'about', 'about,', 'about."', 'about?"', 'about:'}
+  {'about', 'about,', 'about.”', 'about?”', 'about:'}
   >>> set([token for token in c['suny'] if "about" in token])
   {'about'}
   ```
+
+  (I didn’t notice the ” in this list!)
 
 * Next, lets add the two versions (per tokenizer) and see how many unique tokens there are:
 
