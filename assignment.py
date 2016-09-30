@@ -30,7 +30,7 @@ c_gutenberg_fd = FreqDist(c['gutenberg'])
 ws_suny_fd = FreqDist(ws['suny'])
 ws_gutenberg_fd = FreqDist(ws['gutenberg'])
 
-f = open('word_frequencies.csv', 'w')
+f = open('word_frequencies.csv', 'w', encoding='utf-8')
 f.write("Word, suny_c, gutenberg_c, suny_ws, gutenberg_ws, total\n")
 for token in total_tokens:
     total = c_suny_fd[token] + c_gutenberg_fd[token] + ws_suny_fd[token] + ws_gutenberg_fd[token]
