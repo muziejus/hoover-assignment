@@ -35,4 +35,4 @@ f.write("Word, suny_c, gutenberg_c, suny_ws, gutenberg_ws, total\n")
 for token in total_tokens:
     total = c_suny_fd[token] + c_gutenberg_fd[token] + ws_suny_fd[token] + ws_gutenberg_fd[token]
     f.write("|{0}|, |{1}|, |{2}|, |{3}|, |{4}|, |{5}|\n".format(token, c_suny_fd[token], c_gutenberg_fd[token], ws_suny_fd[token], ws_gutenberg_fd[token], total))
-f.close
+f.close()
