@@ -21,8 +21,8 @@ ws = fast_tokenizer(files, regexp.WhitespaceTokenizer().tokenize)
 
 from nltk.probability import *
 
-cs = c['suny'] + c['gutenberg']
-wss = ws['suny'] + ws['gutenberg']
+cs = [x.lower() for x in c['suny']] + [x.lower() for x in c['gutenberg']]
+wss = [x.lower() for x in ws['suny']] + [x.lower() for x in ws['gutenberg']]
 total_tokens = set(cs + wss)
 
 print("There are {0} total tokens from the combined set of texts.".format(len(total_tokens)))
