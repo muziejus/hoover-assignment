@@ -9,7 +9,7 @@ def fast_tokenizer(list_of_files, tokenizer) :
     for file in list_of_files:
         f = open('four_meetings_' + file + '.txt')
         raw = f.read()
-        dict[file] = tokenizer(raw)
+        dict[file] = tokenizer(raw.lower())
     return dict
 
 c = fast_tokenizer(files, word_tokenize)
@@ -21,8 +21,10 @@ ws = fast_tokenizer(files, regexp.WhitespaceTokenizer().tokenize)
 
 from nltk.probability import *
 
-cs = [x.lower() for x in c['suny']] + [x.lower() for x in c['gutenberg']]
-wss = [x.lower() for x in ws['suny']] + [x.lower() for x in ws['gutenberg']]
+cs = c['suny'] + c['gutenberg']
+wss = ws['suny'] + ws['gutenberg']
+# cs = [x.lower() for x in c['suny']] + [x.lower() for x in c['gutenberg']]
+# wss = [x.lower() for x in ws['suny']] + [x.lower() for x in ws['gutenberg']]
 total_tokens = set(cs + wss)
 
 print("There are {0} total tokens from the combined set of texts.".format(len(total_tokens)))
